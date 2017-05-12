@@ -111,8 +111,8 @@ var CountdownClock = function(digits, options) {
 	
 	// set up layout of countdown clock
 	
-	this.digit = options.digit || document.querySelectorAll('.digit');
-	this.divider = options.divider || document.querySelectorAll('.divider');
+	this.digit = options.digit || document.querySelectorAll('.'+this.containerCountdownClock.className + ' .digit');
+	this.divider = options.divider || document.querySelectorAll('.'+this.containerCountdownClock.className + ' .divider');
 
 	// set up styles of countdown clock
 
