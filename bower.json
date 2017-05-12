@@ -1,0 +1,8 @@
+{
+  "name": "countdownClock",
+  "version": "0.1.0",
+  "description": "",
+  "dependencies": {
+    "normalize-scss": "~3.0.3"
+  }
+}

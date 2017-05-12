@@ -1,0 +1,10 @@
+{
+	"browser": true,
+	"devel": true, 
+	"eqeqeq": true,
+	"eqnull": true,
+	"undef": true,
+	"unused": true,
+	"maxdepth": 3, 
+	"esversion": 5 
+}
