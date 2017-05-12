@@ -167,7 +167,7 @@ var CountdownClock = function(digits, options) {
 		// action: Throw Error
 		// conditional: timeArray has less than or more than 4 characters
 		if(this.timeArray.length !== 4) {
-			throw new Error('Please enter 4 numbers for Countdown Clock');
+			throw new Error('Countdown Clock only accepts 4 string numbers');
 
 		} else {
 
@@ -184,7 +184,7 @@ var CountdownClock = function(digits, options) {
 				   isNaN(this.number2Index) || 
 				   isNaN(this.number3Index) || 
 				   isNaN(this.number4Index)) {
-					throw new Error('Countdown Clock only accepts string numbers');
+					throw new Error('Countdown Clock only accepts 4 string numbers');
 				
 				// action: Throw Error
 				// conditional: time variable first number is > 6
@@ -406,10 +406,10 @@ var CountdownClock = function(digits, options) {
 document.addEventListener("DOMContentLoaded", function() {	
 
 	// Default Example
-	new CountdownClock('0025');
+	new CountdownClock('0010');
 
 	// Custom Example
-	new CountdownClock('1234', {
+	new CountdownClock('0025', {
 		containerCountdownClock: document.querySelector('.another-container-countdown-clock'),
 		number1: document.querySelector('#another-location-four'),
 		number2: document.querySelector('#another-location-three'),
