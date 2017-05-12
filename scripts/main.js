@@ -80,9 +80,9 @@ var CountdownClock = function(digits, options) {
 
 	// set up layout of countdown clock
 	
-	this.containerCountdownClock = options.containerCountdownClock || document.querySelectorAll('.container-countdown-clock');
-	this.containerDivider = options.containerDivider || document.querySelectorAll('.container-divider');
-	this.containerDigit = options.containerDigit || document.querySelectorAll('.container-digit');
+	this.containerCountdownClock = options.containerCountdownClock || document.querySelector('.container-countdown-clock');
+	this.containerDivider = options.containerDivider || document.querySelectorAll('.'+this.containerCountdownClock.className + ' .container-divider');
+	this.containerDigit = options.containerDigit || document.querySelectorAll('.'+this.containerCountdownClock.className + ' .container-digit');
 	
 	// set up HTML
 	
@@ -115,16 +115,14 @@ var CountdownClock = function(digits, options) {
 	this.divider = options.divider || document.querySelectorAll('.divider');
 
 	// set up styles of countdown clock
-	
-	this.containerCountdownClock.forEach(function(containerCountdownClock) {
-		containerCountdownClock.style.width = self.containerTimerWidth+'px';
-		containerCountdownClock.style.height = self.containerHeight+'px';
-		containerCountdownClock.style.padding = self.containerDividerWidth+'px';
-		containerCountdownClock.style.border = '8px solid #aaa';
-		containerCountdownClock.style.borderRadius = '5px';
-		containerCountdownClock.style.backgroundColor = '#000';
-		containerCountdownClock.style.overflow = 'hidden';
-	});
+
+	this.containerCountdownClock.style.width = self.containerTimerWidth+'px';
+	this.containerCountdownClock.style.height = self.containerHeight+'px';
+	this.containerCountdownClock.style.padding = self.containerDividerWidth+'px';
+	this.containerCountdownClock.style.border = '8px solid #aaa';
+	this.containerCountdownClock.style.borderRadius = '5px';
+	this.containerCountdownClock.style.backgroundColor = '#000';
+	this.containerCountdownClock.style.overflow = 'hidden';
 	
 	this.containerDivider.forEach(function(containerDivider) {
 		containerDivider.style.width = self.containerDividerWidth+'px';
@@ -406,7 +404,21 @@ var CountdownClock = function(digits, options) {
 // Instantiate a countdown clock
 
 document.addEventListener("DOMContentLoaded", function() {	
-	new CountdownClock('0025'); 
+
+	// Default Example
+	new CountdownClock('0025');
+
+	// Custom Example
+	new CountdownClock('1234', {
+		containerCountdownClock: document.querySelector('.another-container-countdown-clock'),
+		number1: document.querySelector('#another-location-four'),
+		number2: document.querySelector('#another-location-three'),
+		number3: document.querySelector('#another-location-two'),
+		number4: document.querySelector('#another-location-one'),
+		controls: document.querySelector('.another-controls'),
+		errorMsg: document.querySelector('#another-countdown-clock-error-msg')
+	});
+
 });
 
 
