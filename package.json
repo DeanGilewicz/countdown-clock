@@ -1,7 +1,7 @@
 {
     "name": "countdownClock",
     "version": "0.1.0",
-    "description": "A custom countdown clock using JavaScript, HTML, and css",
+    "description": "A custom countdown clock using JavaScript, HTML, and CSS",
     "repository": {},
     "dependencies": {},
     "devDependencies": {
